@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitlab
+  namespace: gitlab
+spec:
+  selector:
+    matchLabels:
+      app: gitlab
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: gitlab
+    spec:
+      containers:
+      - name: gitlab
+        image: suhc-appfs-01:5000/gitlab/gitlab-ce
+        ports:
+        - containerPort: 443
+          protocol: TCP
+        - containerPort: 80
+          protocol: TCP
+        - containerPort: 22
+          protocol: TCP

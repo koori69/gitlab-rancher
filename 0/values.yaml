@@ -1,0 +1,4 @@
+replicaCount: "1"
+httpNodePort: "30080"
+httpsNodePort: "30443"
+sshNodePort: "30022"

@@ -1,0 +1,21 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: gitlab-noteport-service
+spec:
+  selector:
+    app: gitlab
+  type: NodePort
+  ports:
+  - name: 80tcp31080
+    port: 80
+    nodePort: {{ .Values.httpNodePort }}
+    protocol: TCP
+  - name: 443tcp31443
+    port: 443
+    nodePort: {{ .Values.httpsNodePort }}
+    protocol: TCP
+  - name: 22tcp31022
+    port: 22
+    nodePort: {{ .Values.sshNodePort }}
+    protocol: TCP

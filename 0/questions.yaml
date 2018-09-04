@@ -1,0 +1,28 @@
+questions:
+- variable: replicaCount
+  default: "1"
+  description: "Replica Count"
+  type: string
+  required: true
+  label: Replicas
+
+- variable: httpNodePort
+  default: "30080"
+  description: "Http NodePort Number( to set explicitly, choose port between 30000-32767 )"
+  type: string
+  required: true
+  label: http_port
+
+- variable: httpsNodePort
+  default: "30443"
+  description: "Https NodePort Number( to set explicitly, choose port between 30000-32767 )"
+  type: string
+  required: true
+  label: https_port
+
+- variable: sshNodePort
+  default: "30022"
+  description: "SSH NodePort Number( to set explicitly, choose port between 30000-32767 )"
+  type: string
+  required: true
+  label: ssh_port
